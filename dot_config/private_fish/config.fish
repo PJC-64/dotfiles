@@ -2,9 +2,14 @@
 
 # All Sessions
 
-# Update the path
-fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
-fish_add_path -pg /Users/paul/.local/bin
+# Update the path - different on MacOS and Linux
+if test "$OSTYPE" = "darwin21"
+    # MacOS
+    fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
+    fish_add_path -pg /Users/paul/.local/bin
+else
+    # Linux
+end
 
 # Interactive-Only
 
@@ -13,6 +18,7 @@ if status is-interactive
     # Enable Glyphs
     set -g theme_powerline_fonts yes
     set -g theme_nerd_fonts yes
+    set -g fish_prompt_pwd_dir_length 2
 
     # Enable 'fuck' for typos
     thefuck --alias | source

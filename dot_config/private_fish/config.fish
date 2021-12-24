@@ -9,7 +9,7 @@ if test "$OSTYPE" = "darwin21"
     fish_add_path -pg /Users/paul/.local/bin
 else
     # Linux
-    # todo: Add Linux/Ubuntu-specific paths
+    # TODO: Add Linux/Ubuntu-specific paths
 end
 
 # Interactive-Only
@@ -28,13 +28,16 @@ if status is-interactive
     alias cm chezmoi
 
     # Aliases for exa
-    alias ll "exa --long --header"
-    alias lg "exa --long --header --git"
-    alias la "exa --long --all --header"
-    alias lag "exa --long --all --header --git"
+    alias ll "exa --long --icons --header"
+    alias lg "exa --long --icons --header --git"
+    alias la "exa --long --icons --all --header"
+    alias lag "exa --long --icons --all --header --git"
 
 # Enable autojump (j) to allow faster commonly-used folder access
     [ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
 
-end
+# Force fish to start-up in my homedir
 
+cd $HOME
+
+end

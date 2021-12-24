@@ -9,7 +9,7 @@ if test "$OSTYPE" = "darwin21"
     fish_add_path -pg /Users/paul/.local/bin
 else
     # Linux
-    # TODO: Add Linux/Ubuntu-specific paths
+    # todo: Add Linux/Ubuntu-specific paths
 end
 
 # Interactive-Only

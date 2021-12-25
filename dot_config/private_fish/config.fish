@@ -2,6 +2,9 @@
 
 # All Sessions
 
+# Bugfix: Fix for fonts.fish.install redirect error
+set -U fish_features no-stderr-nocaret
+
 # Update the path - different on MacOS and Linux
 if test "$OSTYPE" = "darwin21"
     # MacOS

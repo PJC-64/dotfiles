@@ -1,6 +1,5 @@
 package autojump
 package config
-package fonts
 package foreign-env
 package gh
 package git-flow

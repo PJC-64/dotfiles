@@ -35,8 +35,8 @@ if status is-interactive
     # Aliases for ChezMoi
     alias cm chezmoi
     # Aliases for exa
-    alias ll "exa --long --header"
-    alias lag "exa --long --all --header --git"
-    alias lg "exa --long --header --git"
-    alias la "exa --long --all --header"
+    alias ll "exa --long --header --icons"
+    alias lag "exa --long --all --header --icons --git"
+    alias lg "exa --long --header --icons --git"
+    alias la "exa --long --all --icons --header"
 end

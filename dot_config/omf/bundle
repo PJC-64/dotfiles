@@ -1,6 +1,7 @@
 package autojump
 package config
 package foreign-env
+package fzf
 package gh
 package git-flow
 package git-refresh

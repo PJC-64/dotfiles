@@ -4,6 +4,6 @@ if test "$OSTYPE" = "darwin21"
     source /opt/homebrew/lib/python3.9/site-packages/virtualfish/virtual.fish
 else 
     set -g VIRTUALFISH_PYTHON_EXEC /home/linuxbrew/.linuxbrew/opt/python@3.10/bin/python3
-    source /home/linuxbrew/.linuxbrew/lib/site-packages/virtualfish/virtual.fish
+    source /home/linuxbrew/.linuxbrew/lib/python3.10/site-packages/virtualfish/virtual.fish
 end
 emit virtualfish_did_setup_plugins

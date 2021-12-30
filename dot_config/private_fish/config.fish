@@ -18,6 +18,7 @@ else
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/python@3.10/bin
     fish_add_path -pg /home/.local/share/bin
     fish_add_path -pg  /home/linuxbrew/.linuxbrew/bin
+    fish_add_path -pg $HOME/.local/share/bin
     [ -f /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish ]; and source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
 end
 

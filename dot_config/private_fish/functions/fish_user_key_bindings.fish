@@ -1,7 +1,9 @@
-if test "$OSTYPE" = "darwin21"
+if test (uname) = Darwin
     # MacOS
-    /opt/homebrew/opt/fzf/shell/key-bindings.fish
-else
+    source /opt/homebrew/opt/fzf/shell/key-bindings.fish
+else if test (uname) = Linux
     # Linux
-    /home/linuxbrew/.linuxbrew/opt/fzf/shell/key-bindings.fish
+    source /home/linuxbrew/.linuxbrew/opt/fzf/shell/key-bindings.fish
+else
+    echo "Unknown OS Version found"
 end

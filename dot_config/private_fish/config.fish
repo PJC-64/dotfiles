@@ -6,12 +6,13 @@
 set -U fish_features no-stderr-nocaret
 
 # Update the path - different on MacOS and Linux
-if test "$OSTYPE" = "darwin21"
+# TODO: Fix the test OSTYPE stuff
+if test (uname) = Darwin
     # MacOS
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /Users/paul/.local/bin
     [ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
-else
+else if test (uname) = Linux
     # Linux
     # todo: Add any other Linux/Ubuntu-specific paths
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin
@@ -20,6 +21,9 @@ else
     fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
     fish_add_path -pg $HOME/.local/share/bin
     [ -f /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish ]; and source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
+else
+    # Something else
+    echo "Unknown OS found!!"
 end
 
 # Interactive-Only

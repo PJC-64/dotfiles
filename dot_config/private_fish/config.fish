@@ -6,7 +6,6 @@
 set -U fish_features no-stderr-nocaret
 
 # Update the path - different on MacOS and Linux
-# TODO: Fix the test OSTYPE stuff
 if test (uname) = Darwin
     # MacOS
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
@@ -19,6 +18,7 @@ else if test (uname) = Linux
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/python@3.10/bin
     fish_add_path -pg /home/.local/share/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
+    fish_add_path -pg $HOME/.local/bin
     fish_add_path -pg $HOME/.local/share/bin
     [ -f /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish ]; and source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
 else

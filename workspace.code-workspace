@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "dot_config\\private_fish\\functions"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "todo-tree.tree.showBadges": false
+  }
+}

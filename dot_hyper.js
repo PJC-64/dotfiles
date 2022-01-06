@@ -143,7 +143,9 @@ module.exports = {
     //
 
     // PJC - HyperStrip Plugin Configuration
+    // Disabled 'cos I'm using tmux for now.
 
+    /*
     hyperstrip: {
       statusBar: {
         plugins: [
@@ -156,6 +158,7 @@ module.exports = {
         ],
       },
     },
+    */
 
     // PJC - list of shells for hyper-launch-menu
 
@@ -214,8 +217,8 @@ module.exports = {
     "hyperterm-dibdabs",
     "hyperterm-tabs",
     "perfect-hyper",
-    "hyperstrip",
-    "hyperstrip-hyperline-essentials",
+//    "hyperstrip",
+//    "hyperstrip-hyperline-essentials",
     "hyper-launch-menu",
     "hyper-dracula"
   ],

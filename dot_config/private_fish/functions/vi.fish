@@ -1,5 +1,5 @@
 function vi --wraps=vi
-    if type -q lvim
-        lvim $argv
+    if type -q nvim
+        nvim $argv
     end
 end

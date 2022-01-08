@@ -37,25 +37,19 @@ default_height = 30
 
 [[layers]]
 name = 'lang#sh'
-enable = true
 
 [[layers]]
 name = 'git'
-enable = true
 
 [[layers]]
 name = 'github'
-enable = true
 
 [[layers]]
 name = 'versioncontrol'
-enable = true
 
 [[layers]]
 name = 'fzf'
-enable = true
 
 [[layers]]
 name = 'tmux'
-enable = true
 

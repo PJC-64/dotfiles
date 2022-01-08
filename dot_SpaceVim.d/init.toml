@@ -55,3 +55,7 @@ enable = true
 name = 'fzf'
 enable = true
 
+[[layers]]
+name = 'tmux'
+enable = true
+

@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'canary',
 
     // default font size in pixels for all tabs
-    fontSize: 16,
+    fontSize: 12,
 
     // font family with optional fallbacks
     fontFamily: '"CaskaydiaCove Nerd Font Mono", "DejaVu Sans Mono", monospace',
@@ -67,7 +67,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 14px 24px 14px',
+    padding: '5px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide

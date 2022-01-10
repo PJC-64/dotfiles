@@ -12,8 +12,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: '"CaskaydiaCove Nerd Font Mono", "DejaVu Sans Mono", monospace',
-
+    fontFamily: '"CaskaydiaCove Nerd Font Mono","Cascadia Code", "DejaVu Sans Mono", monospace',
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
@@ -107,7 +106,7 @@ module.exports = {
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ['--login'],
+//    shellArgs: ['--login'],
 
     // for environment variables
     env: {},
@@ -116,7 +115,7 @@ module.exports = {
     bell: false,
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
-    copyOnSelect: false,
+    copyOnSelect: true,
 
     // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
     defaultSSHApp: true,
@@ -135,7 +134,7 @@ module.exports = {
 
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: false,
+    webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
@@ -165,7 +164,7 @@ module.exports = {
     shells: [
       {
         name: "Fish",
-        shell: "/opt/homebrew/bin/fish",
+        shell: "fish",
         args: ["--login"],
         default: true,
       },

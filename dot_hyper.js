@@ -12,12 +12,8 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-<<<<<<< HEAD
     fontFamily: '"Fira Code", "CaskaydiaCove Nerd Font Mono", "DejaVu Sans Mono", monospace',
 
-=======
-    fontFamily: '"CaskaydiaCove Nerd Font Mono","Cascadia Code", "DejaVu Sans Mono", monospace',
->>>>>>> 360800cacbd784f1e08695e8c3a621f11deff786
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
@@ -176,7 +172,7 @@ module.exports = {
       {
         name: "PowerShell",
         shell: "/usr/local/microsoft/powershell/7/pwsh",
-        args: ["--login"]
+        args: ["--login"],
       },
       {
         name: "Bash",

@@ -33,6 +33,7 @@ if status is-interactive
     set -g theme_powerline_fonts yes
     set -g theme_nerd_fonts yes
     set -g fish_prompt_pwd_dir_length 2
+    set -g EDITOR nvim
 
     # Enable 'fuck' for typos
     thefuck --alias | source

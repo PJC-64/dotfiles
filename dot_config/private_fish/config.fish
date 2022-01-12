@@ -30,10 +30,10 @@ end
 
 if status is-interactive
     # Enable Glyphs
-    set -g theme_powerline_fonts yes
-    set -g theme_nerd_fonts yes
-    set -g fish_prompt_pwd_dir_length 2
-    set -g EDITOR nvim
+    set -pg theme_powerline_fonts yes
+    set -pg theme_nerd_fonts yes
+    set -pg fish_prompt_pwd_dir_length 2
+    set -pg EDITOR nvim
 
     # Enable 'fuck' for typos
     thefuck --alias | source

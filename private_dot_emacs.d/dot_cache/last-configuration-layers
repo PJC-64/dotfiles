@@ -1,0 +1,2 @@
+
+(setq dotspacemacs-configuration-layers '(javascript emacs-lisp helm multiple-cursors treemacs))

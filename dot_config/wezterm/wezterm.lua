@@ -1,7 +1,9 @@
 local wezterm = require 'wezterm';
 
 return {
-  font = wezterm.font_with_fallback {
-    ("ProFontX", {font-size = 14.0}),
-    ("Fira Code", {font-size = 14.0}),
+  font = wezterm.font({
+    family="ProFontIIx Nerd Font",
+  }),
+  font_size = 16.0,
+  color_scheme = "Dracula+",
 }

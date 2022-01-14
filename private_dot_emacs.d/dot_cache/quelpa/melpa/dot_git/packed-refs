@@ -1,9 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-4caa9a03cad40d24484fce27fcfcf75b1d08e814 refs/remotes/origin/faq
-517c0b7f4dc258a4f7cba19ddc24fa519ad57618 refs/remotes/origin/make-improvements
-ab71444f97c23b334d5575213dbc5f6bf52eaa93 refs/remotes/origin/make-recipe-fail
-a7fb544c1472e5f4fd9ed68fff0e70f8fa2f281e refs/remotes/origin/master
-146138e20e2917929dc9e2574cd289f2c4b371f4 refs/remotes/origin/tarsius-pending
-d2cc2ba8f391e77739dfe27f90ed4ce797efc9b6 refs/remotes/origin/update-cask-ci
-278cd4ceb242cc7a44bf35a300281ca930730d46 refs/remotes/origin/vertico
-c2439d23b845563ac7bcb961c749e7459d9ca916 refs/remotes/origin/witheditor

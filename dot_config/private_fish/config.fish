@@ -29,6 +29,7 @@ end
 # Interactive-Only
 
 if status is-interactive
+  
     # Enable Glyphs
     set -pg theme_powerline_fonts yes
     set -pg theme_nerd_fonts yes
@@ -40,9 +41,13 @@ if status is-interactive
 
     # Aliases for ChezMoi
     alias cm chezmoi
+    
     # Aliases for exa
     alias ll "exa --long --header --icons"
     alias lag "exa --long --all --header --icons --git"
     alias lg "exa --long --header --icons --git"
     alias la "exa --long --all --icons --header"
+
+    # Terminal commands
+    neofetch
 end

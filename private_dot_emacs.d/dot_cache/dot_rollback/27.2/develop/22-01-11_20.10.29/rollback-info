@@ -1,2 +1,0 @@
-
-(setq update-packages-alist '((auto-compile . "auto-compile-20220109.1513")))

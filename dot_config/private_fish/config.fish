@@ -47,10 +47,10 @@ if status is-interactive
 
     alias la "exa --long --all --icons --header"
     alias lag "exa --long --all --header --icons --git"
-    alias lar "exa --long --all --icons --header"
+    alias lar "exa --long --all --icons --header --sort=modified"
     alias larg "exa --long --all --header --icons --git"
     alias lg "exa --long --header --icons --git"
-    alias lgr "exa --long --header --icons --git"
+    alias lgr "exa --long --header --icons --git --sort=modified"
     alias ll "exa --long --header --icons"
     alias llr "exa --long --header --icons --sort=modified"
  

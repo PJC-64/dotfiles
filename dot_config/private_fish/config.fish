@@ -37,9 +37,6 @@ if status is-interactive
     set -pg fish_prompt_pwd_dir_length 2
     set -pg EDITOR nvim
 
-    # Enable 'fuck' for typos
-    thefuck --alias | source
-
     # Aliases for ChezMoi
     alias cm chezmoi
     

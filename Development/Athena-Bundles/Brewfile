@@ -57,6 +57,7 @@ brew "tig"
 brew "tldr"
 brew "tmux"
 brew "tree"
+brew "virtualenv", link: false
 brew "wmctrl"
 brew "xsel"
 brew "zoxide"

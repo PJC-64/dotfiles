@@ -24,32 +24,51 @@
     enable_tabline_filetype_icon = true
     enable_statusline_mode = true
     prpject_rooter_outermost = false
-# Enable autocomplete layer
-[[layers]]
-name = 'autocomplete'
-auto_completion_return_key_behavior = "complete"
-auto_completion_tab_key_behavior = "smart"
 
-[[layers]]
-name = 'shell'
-default_position = 'top'
-default_height = 30
+    # Enable/Disable SpaceVim layers
 
-[[layers]]
-name = 'lang#sh'
 
-[[layers]]
-name = 'git'
+    # Autocomplete
+    [[layers]]
+    name = 'autocomplete'
+    auto_completion_return_key_behavior = "complete"
+    auto_completion_tab_key_behavior = "smart"
 
-[[layers]]
-name = 'github'
+    # Shell
+    [[layers]]
+    name = 'shell'
+    default_position = 'top'
+    default_height = 30
 
-[[layers]]
-name = 'versioncontrol'
+    # Language completion support (Just sh/zsh/fish, etc for now.
+    [[layers]]
+    name = 'lang#sh'
 
-[[layers]]
-name = 'fzf'
+    # Git support layers
+    [[layers]]
+    name = 'git'
+    name = 'github'
+    name = 'versioncontrol'
 
-[[layers]]
-name = 'tmux'
+    # Fuzzy File Finder
+    [[layers]]
+    name = 'fzf'
+
+    # Better integration with tmux
+    [[layers]]
+    name = 'tmux'
+
+    # TreeSitter (instead of NerdTree)
+    [[layers]]
+    name = 'treesitter'
+
+    # Disable NerdTree (trying TreeSitter insteadi).
+    [[layers]]
+    name = 'nerdtree'
+    enabled = 'false'
+
+[[custom_plugins]]
+  repo = "dracula/vim"
+  name = "dracula"
+  merged = false
 

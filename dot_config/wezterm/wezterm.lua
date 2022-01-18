@@ -17,7 +17,7 @@ local config = {
     font = wezterm.font("ProFontIIx NF"),
     font_size = 14.0,
 
-    default_prog = { 'powershell.exe', '-NoLogo' },
+--    default_prog = { 'wsl.exe', '-l' },
     launch_menu = {},
     leader = { key="b", mods="CTRL" },
 
@@ -52,7 +52,7 @@ local config = {
         { key = "2", mods = "LEADER",       action=wezterm.action{ActivateTab=2}},
         { key = "3", mods = "LEADER",       action=wezterm.action{ActivateTab=3}},
         { key = "4", mods = "LEADER",       action=wezterm.action{ActivateTab=4}},
-         { key = "8", mods = "LEADER",       action=wezterm.action{ActivateTab=8}},
+        { key = "8", mods = "LEADER",       action=wezterm.action{ActivateTab=8}},
         { key = "9", mods = "LEADER",       action="ShowTabNavigator"},
         { key = "b", mods = "LEADER|CTRL",  action="ActivateLastTab"},
         { key = "LeftArrow", mods = "SHIFT",    action=wezterm.action{ActivateTabRelative=-1}},
@@ -68,7 +68,7 @@ local config = {
 
         -- Split
         { key = "-", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-        { key = "_", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
+        { key = "_", mods = "LEADER|SHIFT", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
         { key = "\\",mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
         { key = "|",mods = "LEADER|SHIFT",  action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
 
@@ -151,18 +151,24 @@ local config = {
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     config.term = "" -- Set to empty so FZF works on windows
-    table.insert(config.launch_menu, { label = "PowerShell 5", args = {"powershell.exe", "-NoLogo"} })
-    table.insert(config.launch_menu, { label = "PowerShell", args = {"pwsh.exe", "-NoLogo"} })
+--   table.insert(config.launch_menu, { label = "PowerShell", args = {"powershell.exe", "-NoLogo"} })
+--   table.insert(config.launch_menu, { label = "Ubuntu",     args = {"wsl.exe -d Ubuntu-CommPrev", ""} })
+--   table.insert(config.launch_menu, { label = "Mint", args = {"wsl.ext", "-d Mint"} })
+--   table.insert(config.launch_menu, { label = "Pingwin", args = {"wsl.exe", "-d WLinux"} })
+--   table.insert(config.launch_menu, { label = "SUSE", args = {"wsl.exe", "-d OpenSUSE-Leap-15.3"} })
+
+
+
+    -- Equivalent to POSIX basename(3)
+    -- Given "/foo/bar" returns "bar"
+    -- Given "c:\\foo\\bar" returns "bar"
+    function basename(s)
+      return string.gsub(s, "(.*[/\\])(.*)", "%2")
+    end
 else
     table.insert(config.launch_menu, { label = "zsh", args = {"zsh", "-l"} })
 end
 
--- Equivalent to POSIX basename(3)
--- Given "/foo/bar" returns "bar"
--- Given "c:\\foo\\bar" returns "bar"
-function basename(s)
-  return string.gsub(s, "(.*[/\\])(.*)", "%2")
-end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local pane = tab.active_pane

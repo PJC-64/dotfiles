@@ -14,7 +14,9 @@ fish_add_path -pg $HOME/.local/share/bin
 if test (uname) = Darwin
     # MacOS
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
-    [ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
+    fish_add_path -pg /opt/homebrew/opt/python@3.10/bin
+    fish_add_path -pg /opt/homebrew/bin
+    source /opt/homebrew/share/autojump/autojump.fish
 else if test (uname) = Linux
     # Linux
     # todo: Add any other Linux/Ubuntu-specific paths

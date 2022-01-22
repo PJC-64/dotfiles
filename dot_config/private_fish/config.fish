@@ -16,6 +16,8 @@ if test (uname) = Darwin
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /opt/homebrew/opt/python@3.10/bin
     fish_add_path -pg /opt/homebrew/bin
+    fish_add_path -pg /opt/homebrew/opt/ruby/bin
+    fish_add_path -pg /opt/homebrew/lib/ruby/gems/3.0.0/bin
     source /opt/homebrew/share/autojump/autojump.fish
 else if test (uname) = Linux
     # Linux
@@ -23,6 +25,8 @@ else if test (uname) = Linux
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/python@3.10/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
+    fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/ruby/bin
+    fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/ruby/gems/3.0.0/bin
     [ -f /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish ]; and source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
 else
     # Something else

@@ -9,10 +9,10 @@ module.exports = {
     updateChannel: "canary",
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"ProFontX", "Fira Code", "Hack Nerd Font"',
+    fontFamily: '"RobotoMono Nerd Font", "ProFontX", "Fira Code", "Hack Nerd Font"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",

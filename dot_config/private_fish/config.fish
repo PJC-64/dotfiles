@@ -27,7 +27,7 @@ else if test (uname) = Linux
     fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/ruby/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/ruby/gems/3.0.0/bin
-    [ -f /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish ]; and source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
+    source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
 else
     # Something else
     echo "Unknown OS found!!"
@@ -38,16 +38,18 @@ end
 if status is-interactive
   
     # Enable Glyphs
-    set -pg theme_powerline_fonts yes
-    set -pg theme_nerd_fonts yes
-    set -pg fish_prompt_pwd_dir_length 2
-    set -pg EDITOR nvim
+    set -g theme_powerline_fonts yes
+    set -g theme_nerd_fonts yes
+    set -g fish_prompt_pwd_dir_length 2
+    set -g EDITOR nvim
 
     # Aliases for ChezMoi
     alias cm chezmoi
     
-    # Aliases for exa
+    # Aliases for tmuxinator
+    alias mux tmuxinator
 
+    # Aliases for exa
     alias la "exa --long --all --icons --header"
     alias lag "exa --long --all --header --icons --git"
     alias lar "exa --long --all --icons --header --sort=modified"

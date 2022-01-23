@@ -18,6 +18,7 @@ if test (uname) = Darwin
     fish_add_path -pg /opt/homebrew/bin
     fish_add_path -pg /opt/homebrew/opt/ruby/bin
     fish_add_path -pg /opt/homebrew/lib/ruby/gems/3.0.0/bin
+    set -g BYOBU_PREFIX /opt/homebrew
     source /opt/homebrew/share/autojump/autojump.fish
 else if test (uname) = Linux
     # Linux

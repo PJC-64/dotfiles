@@ -383,12 +383,15 @@ tmux_conf_uninstall_plugins_on_reload=true
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
 
-set -g @plugin 'b0o/tmux-autoreload'
+# set -g @plugin 'b0o/tmux-autoreload'
+set -g @plugin 'akohlbecker/aw-watcher-tmux'
 set -g @plugin 'dracula/tmux'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-sessionist'
 
 # -- custom variables ----------------------------------------------------------
@@ -410,7 +413,7 @@ set -g @dracula-plugins "battery cpu-usage ram-usage network-ping git weather ti
 set -g @dracula-show-left-sep "\uE0B0"
 # set -g @dracula-show-left-sep 
 # Right Separator
-set -g @dracula-show-right-sep "\uE0B1"
+set -g @dracula-show-right-sep "\uE0B2"
 # set -g @dracula-show-right-sep 
 # Enable window flags
 # set -g @dracula-show-flags true

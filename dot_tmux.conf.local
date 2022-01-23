@@ -396,6 +396,7 @@ set -g @plugin 'dracula/tmux'
 # Automatically restore sessions via continuum/resurrect
 set -g @continuum-restore 'on'
 
+
 # -- Dracula-related settings -------------------
 
 # Enable powerline fonts
@@ -409,7 +410,6 @@ set -g @dracula-show-left-sep "\uE0B0"
 # set -g @dracula-show-left-sep 
 # Right Separator
 set -g @dracula-show-right-sep "\uE0B1"
-set -g @dracula-show-right-sep 
 # Enable window flags
 # set -g @dracula-show-flags true
 # Use the session indictor instead of the smiley

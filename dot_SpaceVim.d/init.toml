@@ -25,6 +25,11 @@
     enable_statusline_mode = true
     prpject_rooter_outermost = false
 
+
+    # File Manager Plugin
+    # Supports: nerdtree (defaul), vimfiler (vimproc.vim needed), defx (+py3 feature needed)
+    filemanager = "vimfiler"
+
     # Enable/Disable SpaceVim layers
 
 

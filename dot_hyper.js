@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"RobotoMono Nerd Font", "ProFontX", "Fira Code", "Hack Nerd Font"',
+    fontFamily: '"Iosevka Nerd Font", "RobotoMono Nerd Font", "ProFontX", "Fira Code", "Hack Nerd Font"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",

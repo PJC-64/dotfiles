@@ -44,20 +44,17 @@ if status is-interactive
     set -g fish_prompt_pwd_dir_length 2
     set -g EDITOR nvim
 
-    # Aliases for ChezMoi
-    alias cm chezmoi
+    # Chezmoi aabbreviations
+    abbrev --add --global cm chezmoi
     
-    # Aliases for tmuxinator
-    alias mux tmuxinator
-
-    # Aliases for exa
-    alias la "exa --long --all --icons --header"
-    alias lag "exa --long --all --header --icons --git"
-    alias lar "exa --long --all --icons --header --sort=modified"
-    alias larg "exa --long --all --header --icons --git"
-    alias lg "exa --long --header --icons --git"
-    alias lgr "exa --long --header --icons --git --sort=modified"
-    alias ll "exa --long --header --icons"
-    alias llr "exa --long --header --icons --sort=modified"
+    # Exa abbreviaations
+    abbrev --add --global la "exa --long --all --icons --header"
+    abbrev --add --global lag "exa --long --all --header --icons --git"
+    abbrev --add --global lar "exa --long --all --icons --header --sort=modified"
+    abbrev --add --global larg "exa --long --all --header --icons --git"
+    abbrev --add --global lg "exa --long --header --icons --git"
+    abbrev --add --global lgr "exa --long --header --icons --git --sort=modified"
+    abbrev --add --global ll "exa --long --header --icons"
+    abbrev --add --gloabal llr "exa --long --header --icons --sort=modified"
  
 end

@@ -1,0 +1,10 @@
+commit_exclude_git_config = false
+[repos."/home/paul/.local/share/chezmoi"]
+include = []
+exclude = []
+max_depth = 255
+
+[repos."/mnt/d/paulc/Git/Obsidian"]
+include = []
+exclude = []
+max_depth = 255

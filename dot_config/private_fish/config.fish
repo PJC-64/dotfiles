@@ -44,17 +44,17 @@ if status is-interactive
     set -g fish_prompt_pwd_dir_length 2
     set -g EDITOR nvim
 
-    # Chezmoi aabbreviations
-    abbrev --add --global cm chezmoi
+    # Chezmoi aabbriations
+    abbr --add --global cm chezmoi
     
-    # Exa abbreviaations
-    abbrev --add --global la "exa --long --all --icons --header"
-    abbrev --add --global lag "exa --long --all --header --icons --git"
-    abbrev --add --global lar "exa --long --all --icons --header --sort=modified"
-    abbrev --add --global larg "exa --long --all --header --icons --git"
-    abbrev --add --global lg "exa --long --header --icons --git"
-    abbrev --add --global lgr "exa --long --header --icons --git --sort=modified"
-    abbrev --add --global ll "exa --long --header --icons"
-    abbrev --add --gloabal llr "exa --long --header --icons --sort=modified"
+    # Exa abbriaations
+    abbr --add --global la "exa --long --all --icons --header"
+    abbr --add --global lag "exa --long --all --header --icons --git"
+    abbr --add --global lar "exa --long --all --icons --header --sort=modified"
+    abbr --add --global larg "exa --long --all --header --icons --sort=modified --git"
+    abbr --add --global lg "exa --long --header --icons --git"
+    abbr --add --global lgr "exa --long --header --icons --git --sort=modified"
+    abbr --add --global ll "exa --long --header --icons"
+    abbr --add --global llr "exa --long --header --icons --sort=modified"
  
 end

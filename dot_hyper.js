@@ -215,8 +215,6 @@ module.exports = {
     "hyperterm-dibdabs",
     "hyperterm-tabs",
     "perfect-hyper",
-    //    "hyperstrip",
-    //    "hyperstrip-hyperline-essentials",
     "hyper-launch-menu",
     "hyper-font-ligatures",
     "hyper-dracula",

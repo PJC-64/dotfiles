@@ -51,7 +51,11 @@ if status is-interactive
     abbr --add --global la "exa --long --all --icons --header"
     abbr --add --global lag "exa --long --all --header --icons --git"
     abbr --add --global lar "exa --long --all --icons --header --sort=modified"
+<<<<<<< HEAD
     abbr --add --global larg "exa --long --all --header --icons --sort=modified --git"
+=======
+    abbr --add --global larg "exa --long --all --header --icons --git"
+>>>>>>> 628a97cc2a07301e992dfc4e6dd52ad2f4aa9083
     abbr --add --global lg "exa --long --header --icons --git"
     abbr --add --global lgr "exa --long --header --icons --git --sort=modified"
     abbr --add --global ll "exa --long --header --icons"

@@ -57,4 +57,12 @@ if status is-interactive
     abbr --add --global ll "exa --long --header --icons"
     abbr --add --global llr "exa --long --header --icons --sort=modified"
  
+  # TMUX Abbreviations
+  abbr --add --global ta 'tmux attach -t'
+  abbr --add --global tad 'tmux attach -d -t'
+  abbr --add --global ts 'tmux new-session -s'
+  abbr --add --global tl 'tmux list-sessions'
+  abbr --add --global tksv 'tmux kill-server'
+  abbr --add --global tkss 'tmux kill-session -t'
+  
 end

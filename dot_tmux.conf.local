@@ -407,7 +407,7 @@ set -g @continuum-restore 'on'
 set -g @dracula-show-powerline true
 # Define plugins for status bar
 # available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, network, network-bandwidth, network-ping, weather, time
-set -g @dracula-plugins "battery cpu-usage ram-usage network-ping git weather time"
+set -g @dracula-plugins "battery cpu-usage gpu-usage ram -ping git time"
 # Left Separator
 # set -g @dracula-show-left-sep 
 set -g @dracula-show-left-sep "\uE0B0"
@@ -426,7 +426,7 @@ set -g @dracula-border-contrast true
 set -g @dracula-cpu-usage-label "CPU"
 set -g @dracula-gpu-usage-label "GPU"
 # Date/Time/Temperature formats
-set -g @dracula-day-month true
+# set -g @dracula-day-month true
 set -g @dracula-military-time true
 set -g @dracula-show-fahrenheit false
 

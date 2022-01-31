@@ -407,7 +407,7 @@ set -g @continuum-restore 'on'
 set -g @dracula-show-powerline true
 # Define plugins for status bar
 # available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, network, network-bandwidth, network-ping, weather, time
-set -g @dracula-plugins "battery cpu-usage  ram network-ping git time"
+set -g @dracula-plugins "battery cpu-usage ram network-bandwidth git time"
 # Left Separator
 # set -g @dracula-show-left-sep 
 set -g @dracula-show-left-sep "\uE0B0"

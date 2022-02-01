@@ -34,7 +34,7 @@ else
     echo "Unknown OS found!!"
 end
 
-# Interactive-Only
+# Interactive-Only settings
 
 if status is-interactive
   
@@ -44,25 +44,37 @@ if status is-interactive
     set -g fish_prompt_pwd_dir_length 2
     set -g EDITOR nvim
 
-    # Chezmoi aabbriations
-    abbr --add --global cm chezmoi
+    # Chezmoi abbreviations
+    abbr --add --global cm   "chezmoi"
+    abbr --add --global cmad "chezmoi add"              # Add an existing file, directory, or symlink to the source state 
+    abbr --add --global cmap "chezmoi apply --verbose"  # Update the destination directory to match the target state
+    abbr --add --global cmar "chezmoi archive"          # Generate a tar archive of the target state
+    abbr --add --global cmcd "chezmoi cd"               # Launch a new shell in the source directory
+    abbr --add --global cmd  "chezmoi diff"             # Print the diff between the target state and the destination state
+    abbr --add --global cmf  "chezmoi forget"           # Remove a target from the source state
+    abbr --add --global cmm  "chezmoi merge"            # Perform a 3-way merge
+    abbr --add --global cmma "chezmoi merge-all"        # Perform a 3-way merge for each modified file
+    abbr --add --global cmrm "chezmoi remove"           # Remove a target from both the source state and the destination directory
+    abbr --add --global cmst "chezmoi status"           # Show the satus of targets
+    abbr --add --global cmug "chezmoi upgrade"          # Upgrade chezmoi to the latest released version
+    abbr --add --global cmup "chezmoi update"           # Pull any changes from remote git and apply them
     
-    # Exa abbriaations
-    abbr --add --global la "exa --long --all --icons --header"
-    abbr --add --global lag "exa --long --all --header --icons --git"
-    abbr --add --global lar "exa --long --all --icons --header --sort=modified"
+    # Exa abbreviations (Note: using typical ls abbreviations but using exa)
+    abbr --add --global la   "exa --long --all --icons --header"
+    abbr --add --global lag  "exa --long --all --header --icons --git"
+    abbr --add --global lar  "exa --long --all --icons --header --sort=modified"
     abbr --add --global larg "exa --long --all --header --icons --sort=modified --git"
-    abbr --add --global lg "exa --long --header --icons --git"
-    abbr --add --global lgr "exa --long --header --icons --git --sort=modified"
-    abbr --add --global ll "exa --long --header --icons"
-    abbr --add --global llr "exa --long --header --icons --sort=modified"
+    abbr --add --global lg   "exa --long --header --icons --git"
+    abbr --add --global lgr  "exa --long --header --icons --git --sort=modified"
+    abbr --add --global ll   "exa --long --header --icons"
+    abbr --add --global llr  "exa --long --header --icons --sort=modified"
  
-  # TMUX Abbreviations
-  abbr --add --global ta 'tmux attach -t'
-  abbr --add --global tad 'tmux attach -d -t'
-  abbr --add --global ts 'tmux new-session -s'
-  abbr --add --global tl 'tmux list-sessions'
-  abbr --add --global tksv 'tmux kill-server'
+  # TMUX abbreviations
+  abbr --add --global ta   'tmux attach -t'
+  abbr --add --global tad  'tmux attach -d -t'
+  abbr --add --global ts   'tmux new-session -s'
+  abbr --add --global tl   'tmux list-sessions'
   abbr --add --global tkss 'tmux kill-session -t'
-  
+  abbr --add --global tksv 'tmux kill-server'
+
 end

@@ -57,14 +57,10 @@
     filetypes = [
       'c',
       'cpp',
-      'dart',
       'sh',
-      'fish',
-      'vim'
+      'vim',
+      'javascript'
     ]
-    [layers.override_cmd]
-      c = ['ccls', '--log-file=/tmp/ccls.log']
-      cpp = ['ccls', '--log-file=/tmp/ccls.log']
 
 # Git support layers
     [[layers]]
@@ -80,7 +76,7 @@
     [[layers]]
     name = 'tmux'
 
-    # TreeSitter (instead of NerdTree)
+    # TreeSitter
     [[layers]]
     name = 'treesitter'
 

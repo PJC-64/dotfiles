@@ -46,7 +46,8 @@ if status is-interactive
 
     # Chezmoi abbreviations
     abbr --add --global cm   "chezmoi"
-    abbr --add --global cmad "chezmoi add"              # Add an existing file, directory, or symlink to the source state 
+    abbr --add --global cma  "chezmoi add"              # Add an existing file, directory, or symlink to the source state 
+    abbr --add --global cmad "chezmoi add"              # Add an existing file, directory, or symlink to the source state (Alt abbr)
     abbr --add --global cmap "chezmoi apply --verbose"  # Update the destination directory to match the target state
     abbr --add --global cmar "chezmoi archive"          # Generate a tar archive of the target state
     abbr --add --global cmcd "chezmoi cd"               # Launch a new shell in the source directory

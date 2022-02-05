@@ -61,14 +61,14 @@ if status is-interactive
     abbr --add --global cmup "chezmoi update"           # Pull any changes from remote git and apply them
     
     # Exa abbreviations (Note: using typical ls abbreviations but using exa)
-    abbr --add --global la   "exa --long --all --icons --header"
-    abbr --add --global lag  "exa --long --all --header --icons --git"
-    abbr --add --global lar  "exa --long --all --icons --header --sort=modified"
-    abbr --add --global larg "exa --long --all --header --icons --sort=modified --git"
-    abbr --add --global lg   "exa --long --header --icons --git"
-    abbr --add --global lgr  "exa --long --header --icons --git --sort=modified"
-    abbr --add --global ll   "exa --long --header --icons"
-    abbr --add --global llr  "exa --long --header --icons --sort=modified"
+    abbr --add --global la   "exa --group-directories-first --long --all --icons --header"
+    abbr --add --global lag  "exa --group-directories-first --long --all --header --icons --git"
+    abbr --add --global lar  "exa --group-directories-first --long --all --icons --header --sort=modified"
+    abbr --add --global larg "exa --group-directories-first --long --all --header --icons --sort=modified --git"
+    abbr --add --global lg   "exa --group-directories-first --long --header --icons --git"
+    abbr --add --global lgr  "exa --group-directories-first --long --header --icons --git --sort=modified"
+    abbr --add --global ll   "exa --group-directories-first --long --header --icons"
+    abbr --add --global llr  "exa --group-directories-first --long --header --icons --sort=modified"
  
   # TMUX abbreviations
   abbr --add --global ta   'tmux attach -t'

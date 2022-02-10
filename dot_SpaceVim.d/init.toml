@@ -53,7 +53,7 @@
 [[layers]]
     name = 'lang#sh'
 
- coc/lsp support
+# Coc/lsp support
 [[layers]] 
     name = 'lsp'
     filetypes = [

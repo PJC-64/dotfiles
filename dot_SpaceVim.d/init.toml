@@ -6,7 +6,9 @@
 # License: GPLv3
 #=============================================================================
 
-# All SpaceVim option below [option] section
+#=====================================
+# Configure SpaceVim Options
+
 [options]
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
@@ -32,27 +34,27 @@
     # Supports: nerdtree (defaul), vimfiler (vimproc.vim needed), defx (+py3 feature needed)
     filemanager = "vimfiler"
 
-    # Enable/Disable SpaceVim layers
+#=====================================
+# Enable/Disable SpaceVim layers
 
-
-    # Autocomplete
-    [[layers]]
+# Autocomplete
+[[layers]]
     name = 'autocomplete'
     auto_completion_return_key_behavior = "complete"
     auto_completion_tab_key_behavior = "smart"
 
-    # Shell
-    [[layers]]
+# Shell
+[[layers]]
     name = 'shell'
     default_position = 'top'
     default_height = 30
 
-    # Language completion support (Just sh/zsh/fish, etc for now.
-    [[layers]]
+# Language completion support (Just sh/zsh/fish, etc for now.
+[[layers]]
     name = 'lang#sh'
 
-   # coc/lsp support
-    [[layers]] 
+ coc/lsp support
+[[layers]] 
     name = 'lsp'
     filetypes = [
       # 'c',
@@ -63,38 +65,51 @@
     ]
 
 # Git support layers
-    [[layers]]
+[[layers]]
     name = 'git'
-    name = 'github'
-    name = 'versioncontrol'
 
-    # Fuzzy File Finder
-    [[layers]]
+[[layers]]
+    name = 'github'
+
+[[layers]]
+    name = 'VersionControl'
+
+# Fuzzy File Finder
+[[layers]]
     name = 'fzf'
 
-    # Better integration with tmux
-    [[layers]]
+# Better integration with tmux
+[[layers]]
     name = 'tmux'
 
-    # TreeSitter
-    [[layers]]
+# TreeSitter
+[[layers]]
     name = 'treesitter'
 
-    # Disable NerdTree (trying TreeSitter insteadi).
-    [[layers]]
+# Disable NerdTree (trying TreeSitter insteadi).
+[[layers]]
     name = 'nerdtree'
     enabled = 'false'
 
-[[custom_plugins]]
-  repo = "dracula/vim"
-  name = "dracula"
-  merged = false
+#=====================================
+# Add Custom Plugins not supported by SpaceVim layers.
 
+# Dracula Theme for Vim/NeoVim
 [[custom_plugins]]
-  repo = 'nvim-lua/plenary.nvim'
+    repo = "dracula/vim"
+    name = "dracula"
+    merged = false
 
+# Plenary plugin for async Lua support
 [[custom_plugins]]
-  repo = 'sindrets/diffview.nvim'
+    repo = 'nvim-lua/plenary.nvim'
 
+# DiffView - better diff plugins
+[[custom_plugins]]
+    repo = 'sindrets/diffview.nvim'
+
+# Vim/NeoVim web icons (used by diffview)
 [[custom-plugins]]
-  repo = 'kyazdani42/nvim-web-icons'
+    repo = 'kyazdani42/nvim-web-icons'
+
+

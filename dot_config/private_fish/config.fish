@@ -79,3 +79,5 @@ if status is-interactive
   abbr --add --global tksv 'tmux kill-server'
 
 end
+
+thefuck --alias | source

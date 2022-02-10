@@ -58,8 +58,10 @@ SpaceVim-layers-core-tabline	SpaceVim.txt	/*SpaceVim-layers-core-tabline*
 SpaceVim-layers-cscope	SpaceVim.txt	/*SpaceVim-layers-cscope*
 SpaceVim-layers-ctrlp	SpaceVim.txt	/*SpaceVim-layers-ctrlp*
 SpaceVim-layers-debug	SpaceVim.txt	/*SpaceVim-layers-debug*
+SpaceVim-layers-edit	SpaceVim.txt	/*SpaceVim-layers-edit*
 SpaceVim-layers-exprfold	SpaceVim.txt	/*SpaceVim-layers-exprfold*
 SpaceVim-layers-format	SpaceVim.txt	/*SpaceVim-layers-format*
+SpaceVim-layers-fzf	SpaceVim.txt	/*SpaceVim-layers-fzf*
 SpaceVim-layers-git	SpaceVim.txt	/*SpaceVim-layers-git*
 SpaceVim-layers-github	SpaceVim.txt	/*SpaceVim-layers-github*
 SpaceVim-layers-gtags	SpaceVim.txt	/*SpaceVim-layers-gtags*
@@ -242,6 +244,7 @@ SpaceVim-usage-custom_plugins	SpaceVim.txt	/*SpaceVim-usage-custom_plugins*
 SpaceVim-usage-repl	SpaceVim.txt	/*SpaceVim-usage-repl*
 SpaceVim-usage-search-and-replace	SpaceVim.txt	/*SpaceVim-usage-search-and-replace*
 SpaceVim-usage-tasks	SpaceVim.txt	/*SpaceVim-usage-tasks*
+SpaceVim-usage-undotree	SpaceVim.txt	/*SpaceVim-usage-undotree*
 SpaceVim-usage-windows-and-tabs	SpaceVim.txt	/*SpaceVim-usage-windows-and-tabs*
 SpaceVim.txt	SpaceVim.txt	/*SpaceVim.txt*
 g:dash_map	SpaceVim.txt	/*g:dash_map*

@@ -1,6 +1,6 @@
 "=============================================================================
 " SpaceVim.vim --- Initialization and core files for SpaceVim
-" Copyright (c) 2016-2021 Wang Shidong & Contributors
+" Copyright (c) 2016-2022 Wang Shidong & Contributors
 " Author: Shidong Wang < wsdjeg at 163.com >
 " URL: https://spacevim.org
 " License: GPLv3
@@ -51,7 +51,7 @@ let s:SYSTEM = SpaceVim#api#import('system')
 
 ""
 " Version of SpaceVim , this value can not be changed.
-let g:spacevim_version = '1.9.0-dev'
+let g:spacevim_version = '2.0.0-dev'
 lockvar g:spacevim_version
 
 ""
@@ -1648,6 +1648,40 @@ endfunction
 "   function.
 
 ""
+" @section undo-tree, usage-undotree
+" @parentsection usage
+" Undo tree visualizes the undo history and makes it easier to browse and
+" switch between different undo branches.The default key binding is `F7`.
+" If `+python` or `+python3` is enabled, `vim-mundo` will be used,
+" otherwise `undotree` will be used.
+" 
+" Key bindings within undo tree windows:
+" >
+"    key bindings     description
+"    `G`              move bottom
+"    `J`              move older write
+"    `K`              move newer write
+"    `N`              previous match
+"    `P`              play to
+"    `<2-LeftMouse>`  mouse click
+"    `/`              search
+"    `<CR>`           preview
+"    `d`              diff
+"    `<down>`         move older
+"    `<up>`           move newer
+"    `i`              toggle inline
+"    `j`              move older
+"    `k`              move newer
+"    `n`              next match
+"    `o`              preview
+"    `p`              diff current buffer
+"    `q`              quit
+"    `r`              diff
+"    `gg`             move top
+"    `?`              toggle help
+" <
+
+""
 " @section windows-and-tabs, usage-windows-and-tabs
 " @parentsection usage
 " @subsection Windows related key bindings
@@ -1884,11 +1918,19 @@ endfunction
 
 ""
 " @section Changelog, changelog
-" Following HEAD: changes in master branch since last release v1.7.0
+" Following HEAD: changes in master branch since last release v1.9.0
 "
 " https://github.com/SpaceVim/SpaceVim/wiki/Following-HEAD
 "
-" 2021-06-16: v1.4.0
+" 2021-06-16: v1.9.0
+"
+" https://spacevim.org/SpaceVim-release-v1.9.0/
+"
+" 2021-06-16: v1.8.0
+"
+" https://spacevim.org/SpaceVim-release-v1.8.0/
+"
+" 2021-06-16: v1.7.0
 "
 " https://spacevim.org/SpaceVim-release-v1.7.0/
 "

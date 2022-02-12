@@ -13,6 +13,7 @@ fish_add_path -pg $HOME/.local/share/bin
 # Different paths for MacOS and Linux
 if test (uname) = Darwin
     # MacOS
+    fish_add_path -pg /opt/local/bin
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /opt/homebrew/opt/python@3.10/bin
     fish_add_path -pg /opt/homebrew/bin

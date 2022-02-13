@@ -91,10 +91,10 @@
   merged = false
 
 [[custom_plugins]]
-  repo = 'nvim-lua/plenary.nvim'
+  repo = "nvim-lua/plenary.nvim"
 
 [[custom_plugins]]
-  repo = 'sindrets/diffview.nvim'
+  repo = "sindrets/diffview.nvim"
 
-[[custom-plugins]]
-  repo = 'kyazdani42/nvim-web-icons'
+[[custom_plugins]]
+  repo = "kyazdani42/nvim-web-icons"

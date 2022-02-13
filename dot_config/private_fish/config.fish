@@ -16,7 +16,7 @@ if test (uname) = Darwin
     fish_add_path -pg /opt/local/bin
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /opt/homebrew/opt/python@3.10/bin
-    fish_add_path -pg /opt/homebrew/bin
+    fish_add_path -pg /home/homebrew/lib/python@3.10/site-packages
     fish_add_path -pg /opt/homebrew/opt/ruby/bin
     fish_add_path -pg /opt/homebrew/lib/ruby/gems/3.0.0/bin
     set -g BYOBU_PREFIX /opt/homebrew
@@ -24,11 +24,13 @@ if test (uname) = Darwin
 else if test (uname) = Linux
     # Linux
     # todo: Add any other Linux/Ubuntu-specific paths
+    fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/python@3.10/bin
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
+    fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/python3.10/site-packages
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/ruby/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/ruby/gems/3.0.0/bin
+    set -g BYOBU_PREFIX /home/linuxbrew/.linuxbrew
     source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
 else
     # Something else

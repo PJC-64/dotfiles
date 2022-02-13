@@ -1,20 +1,24 @@
 -- Full Wezterm config (wezterm.lua)
 -- Created: 11/12/2021, 21:09:35 +0530
--- Last updated: 15/01/2022, 15:03:01 +0530
+-- Last updated by PJC: 13/02/2022 @ 05:00:13
+
 local wezterm = require("wezterm")
 
 local config = {
     check_for_updates = true,
     color_scheme = "Dracula+",
 
-    tab_bar_at_bottom = true,
+--    tab_bar_at_bottom = true,
+    enable_tab_bar = false,
+
     inactive_pane_hsb = {
         hue = 1.0,
         saturation = 1.0,
         brightness = 1.0,
     },
 
-    font = wezterm.font("ProFontIIx NF"),
+--    font = wezterm.font({family = 'Iosevka NF'}),
+    font = wezterm.font({family = 'Hack Nerd Font'}),
     font_size = 14.0,
 
 --    default_prog = { 'wsl.exe', '-l' },

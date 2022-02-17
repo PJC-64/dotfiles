@@ -40,12 +40,16 @@ end
 # Interactive-Only settings
 
 if status is-interactive
-  
+    
+    # source interactive-only environments.
+    thefuck --alias | source
+    $HOME/.cargo/env | source
+
     # Enable Glyphs
     set -g theme_powerline_fonts yes
     set -g theme_nerd_fonts yes
     set -g fish_prompt_pwd_dir_length 2
-    set -g EDITOR nvim
+    set -g EDITOR nvr
 
     # Chezmoi abbreviations
     abbr --add --global cm   "chezmoi"
@@ -73,14 +77,13 @@ if status is-interactive
     abbr --add --global ll   "exa --group-directories-first --long --header --icons"
     abbr --add --global llr  "exa --group-directories-first --long --header --icons --sort=modified"
  
-  # TMUX abbreviations
-  abbr --add --global ta   'tmux attach -t'
-  abbr --add --global tad  'tmux attach -d -t'
-  abbr --add --global ts   'tmux new-session -s'
-  abbr --add --global tl   'tmux list-sessions'
-  abbr --add --global tkss 'tmux kill-session -t'
-  abbr --add --global tksv 'tmux kill-server'
+    # TMUX abbreviations
+    abbr --add --global ta   'tmux attach -t'
+    abbr --add --global tad  'tmux attach -d -t'
+    abbr --add --global ts   'tmux new-session -s'
+    abbr --add --global tl   'tmux list-sessions'
+    abbr --add --global tkss 'tmux kill-session -t'
+    abbr --add --global tksv 'tmux kill-server'
 
 end
 
-thefuck --alias | source

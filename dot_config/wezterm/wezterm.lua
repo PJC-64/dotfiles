@@ -19,7 +19,7 @@ local config = {
 
 --    font = wezterm.font({family = 'Iosevka NF'}),
     font = wezterm.font({family = 'Hack Nerd Font'}),
-    font_size = 14.0,
+    font_size = 13.0,
 
 --    default_prog = { 'wsl.exe', '-l' },
     launch_menu = {},

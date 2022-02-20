@@ -59,6 +59,7 @@
     filetypes = [
       # 'c',
       # 'cpp',
+      'rust',
       'sh',
       'vim',
       'javascript'

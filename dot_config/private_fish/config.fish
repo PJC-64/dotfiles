@@ -13,10 +13,10 @@ fish_add_path -pg $HOME/.local/share/bin
 # Different paths for MacOS and Linux
 if test (uname) = Darwin
     # MacOS
-    fish_add_path -pg /opt/local/bin
+    fish_add_path -pg /opt/homebrew/bin
     fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
     fish_add_path -pg /opt/homebrew/opt/python@3.10/bin
-    fish_add_path -pg /home/homebrew/lib/python@3.10/site-packages
+    fish_add_path -pg /opt/homebrew/lib/python@3.10/site-packages
     fish_add_path -pg /opt/homebrew/opt/ruby/bin
     fish_add_path -pg /opt/homebrew/lib/ruby/gems/3.0.0/bin
     set -g BYOBU_PREFIX /opt/homebrew
@@ -41,10 +41,6 @@ end
 
 if status is-interactive
     
-    # source interactive-only environments.
-    thefuck --alias | source
-    $HOME/.cargo/env | source
-
     # Enable Glyphs
     set -g theme_powerline_fonts yes
     set -g theme_nerd_fonts yes
@@ -84,6 +80,9 @@ if status is-interactive
     abbr --add --global tl   'tmux list-sessions'
     abbr --add --global tkss 'tmux kill-session -t'
     abbr --add --global tksv 'tmux kill-server'
+
+    thefuck --alias | source
+    source $HOME/.cargo/env
 
 end
 

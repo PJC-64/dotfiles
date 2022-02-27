@@ -47,6 +47,9 @@ if status is-interactive
     set -g fish_prompt_pwd_dir_length 2
     set -g EDITOR nvr
 
+    # Set nvim listen address
+    set -g NVIM_LISTEN_ADDRESS /tmp/nvimsocket
+
     # Chezmoi abbreviations
     abbr --add --global cm   "chezmoi"
     abbr --add --global cma  "chezmoi add"              # Add an existing file, directory, or symlink to the source state 
@@ -82,7 +85,6 @@ if status is-interactive
     abbr --add --global tksv 'tmux kill-server'
 
     thefuck --alias | source
-    source $HOME/.cargo/env
 
 end
 

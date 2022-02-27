@@ -4,7 +4,12 @@ include = []
 exclude = []
 max_depth = 255
 
-[repos."/mnt/d/paulc/Git/Obsidian"]
+[repos."/home/paul/Development/dura-status"]
+include = []
+exclude = []
+max_depth = 255
+
+[repos."/mnt/d/paulc/Development/Obsidian"]
 include = []
 exclude = []
 max_depth = 255

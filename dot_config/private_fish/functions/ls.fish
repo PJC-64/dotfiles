@@ -1,6 +1,4 @@
 function ls --wraps=ls
-    if type -q exa
-        exa $argv
-    end
+  exa $argv
 end
 

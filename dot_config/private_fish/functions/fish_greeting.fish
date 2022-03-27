@@ -2,8 +2,8 @@
 function fish_greeting --description What\'s\ up,\ fish\?
     if test "$TERM_PROGRAM" != "tmux"
       command neofetch
-      dura serve > /dev/null 2>&1 &
-      disown %1
+      #   dura serve > /dev/null 2>&1 &
+      #   disown %1
     end
     set_color $fish_color_param
     command uname -nmsr

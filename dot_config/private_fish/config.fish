@@ -86,5 +86,10 @@ if status is-interactive
 
     thefuck --alias | source
 
+    # OMP Theme
+    # Gmay - https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/gmay.omp.json
+    # set pjc_omp_theme https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/night-owl.omp.json
+    # oh-my-posh --init --shell fish --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/gmay.omp.json | source
+
 end
 

@@ -64,21 +64,14 @@ if status is-interactive
     abbr --add --global cmug "chezmoi upgrade"          # Upgrade chezmoi to the latest released version
     abbr --add --global cmup "chezmoi update"           # Pull any changes from remote git and apply them
     
-    # Exa abbreviations (Note: using typical ls abbreviations but using exa)
-    abbr --add --global la   "exa --group-directories-first --long --all --icons --header"
-    abbr --add --global lag  "exa --group-directories-first --long --all --header --icons --git"
-    abbr --add --global lar  "exa --group-directories-first --long --all --icons --header --sort=modified"
-    abbr --add --global larg "exa --group-directories-first --long --all --header --icons --sort=modified --git"
-    abbr --add --global lg   "exa --group-directories-first --long --header --icons --git"
-    abbr --add --global lgr  "exa --group-directories-first --long --header --icons --git --sort=modified"
-    abbr --add --global ll   "exa --group-directories-first --long --header --icons"
-    abbr --add --global llr  "exa --group-directories-first --long --header --icons --sort=modified"
+    # LSD abbreviations (EXA removed)
+    abbr --add --global ls "lsd"
  
     # TMUX abbreviations
     abbr --add --global ta   'tmux attach -t'
     abbr --add --global tad  'tmux attach -d -t'
     abbr --add --global ts   'tmux new-session -s'
-    abbr --add --global tl   'tmux list-sessions'
+    abbr --add --global tls  'tmux list-sessions'
     abbr --add --global tkss 'tmux kill-session -t'
     abbr --add --global tksv 'tmux kill-server'
 

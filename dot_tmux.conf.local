@@ -430,9 +430,6 @@ set -g @dracula-gpu-usage-label "GPU"
 set -g @dracula-military-time true
 set -g @dracula-show-fahrenheit false
 
-# Enable fig tmux integration
-source-file ~/.fig/tmux
-
 # to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
 # must be on the same line as the function name otherwise the parse won't detect

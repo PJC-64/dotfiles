@@ -1,0 +1,23 @@
+[credential "https://github.com"]
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[user]
+	name = Paul Cutmore
+	email = paul.cutmore@icloud.com
+[pull]
+	rebase = false
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  light = false
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+  

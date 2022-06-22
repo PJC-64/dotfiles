@@ -20,7 +20,6 @@ if test (uname) = Darwin
     fish_add_path -pg /opt/homebrew/opt/ruby/bin
     fish_add_path -pg /opt/homebrew/lib/ruby/gems/3.0.0/bin
     set -g BYOBU_PREFIX /opt/homebrew
-    source /opt/homebrew/share/autojump/autojump.fish
 else if test (uname) = Linux
     # Linux
     # todo: Add any other Linux/Ubuntu-specific paths
@@ -31,7 +30,6 @@ else if test (uname) = Linux
     fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/ruby/bin
     fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/ruby/gems/3.0.0/bin
     set -g BYOBU_PREFIX /home/linuxbrew/.linuxbrew
-    source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
 else
     # Something else
     echo "Unknown OS found!!"

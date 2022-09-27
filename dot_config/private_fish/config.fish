@@ -12,28 +12,21 @@ fish_add_path -pg $HOME/.local/share/bin
 
 # Different paths for MacOS and Linux
 if test (uname) = Darwin
-    # MacOS
-    fish_add_path -pg /opt/homebrew/bin
-    fish_add_path -pg /opt/homebrew/opt/coreutils/libexec/gnubin
-    fish_add_path -pg /opt/homebrew/opt/python@3.10/bin
-    fish_add_path -pg /opt/homebrew/lib/python@3.10/site-packages
-    fish_add_path -pg /opt/homebrew/opt/ruby/bin
-    fish_add_path -pg /opt/homebrew/lib/ruby/gems/3.0.0/bin
     set -g BYOBU_PREFIX /opt/homebrew
 else if test (uname) = Linux
     # Linux
-    # todo: Add any other Linux/Ubuntu-specific paths
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/bin
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/python@3.10/bin
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/python3.10/site-packages
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/opt/ruby/bin
-    fish_add_path -pg /home/linuxbrew/.linuxbrew/lib/ruby/gems/3.0.0/bin
     set -g BYOBU_PREFIX /home/linuxbrew/.linuxbrew
 else
     # Something else
     echo "Unknown OS found!!"
 end
+
+fish_add_path -pg $BYOBU_PREFIX/bin
+fish_add_path -pg $BYOBU_PREFIX/opt/coreutils/libexec/gnubin
+fish_add_path -pg $BYOBU_PREFIX/opt/python@3.10/bin
+fish_add_path -pg $BYOBU_PREFIX/lib/python@3.10/site-packages
+fish_add_path -pg $BYOBU_PREFIX/opt/ruby/bin
+fish_add_path -pg $BYOBU_PREFIX/lib/ruby/gems/3.0.0/bin
 
 # Interactive-Only settings
 
@@ -64,7 +57,7 @@ if status is-interactive
     abbr --add --global cmug "chezmoi upgrade"          # Upgrade chezmoi to the latest released version
     abbr --add --global cmup "chezmoi update"           # Pull any changes from remote git and apply them
     
-    # LSD abbreviations (EXA removed)
+    # LSD abbreviations (have removed EXA)
     abbr --add --global ls "lsd"
  
     # TMUX abbreviations
@@ -74,6 +67,12 @@ if status is-interactive
     abbr --add --global tls  'tmux list-sessions'
     abbr --add --global tkss 'tmux kill-session -t'
     abbr --add --global tksv 'tmux kill-server'
+
+    # Brew/Homebrew abbreviations
+    abbr --add --global ,bic  'brew install --cask '
+    abbr --add --global ,bs   'brew search'
+    abbr --add --global ,bu   'brew uninstall'
+    abbr --add --global ,bug  'brew update && brew upgrade'
 
     thefuck --alias | source
 

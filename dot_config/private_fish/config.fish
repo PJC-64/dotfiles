@@ -75,6 +75,7 @@ if status is-interactive
     abbr --add --global ,bug  'brew update && brew upgrade'
 
     thefuck --alias | source
+    zoxide init fish | source
 
 end
 

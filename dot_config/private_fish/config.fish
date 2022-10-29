@@ -22,6 +22,7 @@ else
 end
 
 fish_add_path -pg $BYOBU_PREFIX/bin
+fish_add_path -pg $BYOBU_PREFIX/sbin
 fish_add_path -pg $BYOBU_PREFIX/opt/coreutils/libexec/gnubin
 fish_add_path -pg $BYOBU_PREFIX/opt/python@3.10/bin
 fish_add_path -pg $BYOBU_PREFIX/lib/python@3.10/site-packages

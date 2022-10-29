@@ -75,7 +75,6 @@ if status is-interactive
     abbr --add --global ,bug  'brew update && brew upgrade'
 
     thefuck --alias | source
-    starship init fish | source
 
 end
 

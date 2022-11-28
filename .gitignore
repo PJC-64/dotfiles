@@ -1,3 +1,5 @@
 .gitconfig
 *-save
+dot_config:wq
+/gh/hosts.yml
 

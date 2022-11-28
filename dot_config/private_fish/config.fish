@@ -61,19 +61,20 @@ if status is-interactive
     # LSD abbreviations (have removed EXA)
     abbr --add --global ls "lsd"
  
-    # TMUX abbreviations
-    abbr --add --global ta   'tmux attach -t'
-    abbr --add --global tad  'tmux attach -d -t'
-    abbr --add --global ts   'tmux new-session -s'
-    abbr --add --global tls  'tmux list-sessions'
-    abbr --add --global tkss 'tmux kill-session -t'
-    abbr --add --global tksv 'tmux kill-server'
-
     # Brew/Homebrew abbreviations
     abbr --add --global ,bic  'brew install --cask '
+    abbr --add --global ,bls  'brew list'
     abbr --add --global ,bs   'brew search'
     abbr --add --global ,bu   'brew uninstall'
     abbr --add --global ,bug  'brew update && brew upgrade'
+
+    # Zellij abbreviations
+    abbr --add --global ,z   'zellij'
+    abbr --add --global ,zl  'zellij -l Athena-lvim'
+    abbr --add --global ,zn  'zellij -l Athena-nvim'
+    abbr --add --global ,zls 'zellij list-sessions'
+
+    # Import external commands
 
     thefuck --alias | source
     zoxide init fish | source

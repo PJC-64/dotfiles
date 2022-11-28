@@ -77,6 +77,10 @@ if status is-interactive
 
     thefuck --alias | source
     zoxide init fish | source
+    eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+
+  # Aliases
+  alias j z
 
 end
 

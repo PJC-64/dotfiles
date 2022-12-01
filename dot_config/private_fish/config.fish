@@ -28,6 +28,7 @@ fish_add_path -pg $BYOBU_PREFIX/opt/python@3.10/bin
 fish_add_path -pg $BYOBU_PREFIX/lib/python@3.10/site-packages
 fish_add_path -pg $BYOBU_PREFIX/opt/ruby/bin
 fish_add_path -pg $BYOBU_PREFIX/lib/ruby/gems/3.0.0/bin
+fish_add_path -pg $BYOBU_PREFIX/lib/ruby/gems/3.1.0/bin
 
 # Interactive-Only settings
 
@@ -82,6 +83,9 @@ if status is-interactive
 
   # Aliases
   alias j z
+
+  # ITERM2 integration
+  test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 end
 

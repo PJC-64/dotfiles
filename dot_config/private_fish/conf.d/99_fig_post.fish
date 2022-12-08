@@ -1,1 +1,2 @@
-test -x ~/.local/bin/fig; and eval (~/.local/bin/fig init fish post --rcfile 99_fig_post | string split0)
+contains $HOME/.local/bin $PATH; or set -a PATH $HOME/.local/bin
+command -qv fig; and eval (fig init fish post --rcfile 99_fig_post | string split0)

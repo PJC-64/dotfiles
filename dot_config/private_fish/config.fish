@@ -59,8 +59,14 @@ if status is-interactive
     abbr --add --global cmug "chezmoi upgrade"          # Upgrade chezmoi to the latest released version
     abbr --add --global cmup "chezmoi update"           # Pull any changes from remote git and apply them
     
-    # LSD abbreviations (have removed EXA)
-    abbr --add --global ls "lsd"
+    # EXA abbreviations
+    abbr --add --global ls    "exa --icons"
+    abbr --add --global la    "exa  --icons --all"
+    abbr --add --global lag   "exa --icons --all --git"
+    abbr --add --global ll    "exa --icons --long --header"
+    abbr --add --global llg   "exa --icons --long --git --header --group-directories-first --sort date"
+    abbr --add --global lla   "exa --icons --long --all --header --group-directories-first --sort date"
+    abbr --add --global llag  "exa --icons --long --all --git --header --group-directories-first --sort date"
  
     # Brew/Homebrew abbreviations
     abbr --add --global ,bic  'brew install --cask '
@@ -71,6 +77,7 @@ if status is-interactive
 
     # Zellij abbreviations
     abbr --add --global ,z   'zellij'
+    abbr --add --global ,za  'zellij attach'
     abbr --add --global ,zl  'zellij -l Athena-lvim'
     abbr --add --global ,zn  'zellij -l Athena-nvim'
     abbr --add --global ,zls 'zellij list-sessions'
@@ -80,6 +87,7 @@ if status is-interactive
     thefuck --alias | source
     zoxide init fish | source
     eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+    source $BYOBU_PREFIX/opt/asdf/libexec/asdf.fish
 
   # Aliases
   alias j z

@@ -6,7 +6,14 @@ local default_plugins = {
 
   -- nvchad plugins
   { "NvChad/extensions", branch = "v2.0" },
-  { "NvChad/base46", branch = "v2.0" },
+
+  {
+    "NvChad/base46",
+    branch = "v2.0",
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
 
   {
     "NvChad/ui",
@@ -54,12 +61,12 @@ local default_plugins = {
     "lukas-reineke/indent-blankline.nvim",
     init = function()
       require("core.utils").lazy_load "indent-blankline.nvim"
-      require("core.utils").load_mappings "blankline"
     end,
     opts = function()
       return require("plugins.configs.others").blankline
     end,
     config = function(_, opts)
+      require("core.utils").load_mappings "blankline"
       dofile(vim.g.base46_cache .. "blankline")
       require("indent_blankline").setup(opts)
     end,
@@ -74,7 +81,7 @@ local default_plugins = {
       return require "plugins.configs.treesitter"
     end,
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. "syntax")
+      pcall(dofile, vim.g.base46_cache .. "syntax")
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
@@ -92,7 +99,7 @@ local default_plugins = {
           if vim.v.shell_error == 0 then
             vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
             vim.schedule(function()
-              require("lazy").load { plugins = "gitsigns.nvim" }
+              require("lazy").load { plugins = { "gitsigns.nvim" } }
             end)
           end
         end,
@@ -122,6 +129,8 @@ local default_plugins = {
       vim.api.nvim_create_user_command("MasonInstallAll", function()
         vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
       end, {})
+
+      vim.g.mason_binaries_list = opts.ensure_installed
     end,
   },
 
@@ -142,8 +151,9 @@ local default_plugins = {
         -- snippet plugin
         "L3MON4D3/LuaSnip",
         dependencies = "rafamadriz/friendly-snippets",
-        config = function()
-          require("plugins.configs.others").luasnip()
+        opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+        config = function(_, opts)
+          require("plugins.configs.others").luasnip(opts)
         end,
       },
 
@@ -228,7 +238,6 @@ local default_plugins = {
   -- Only load whichkey after all the gui
   {
     "folke/which-key.nvim",
-    enabled = false,
     keys = { "<leader>", '"', "'", "`" },
     init = require("core.utils").load_mappings "whichkey",
     opts = function()

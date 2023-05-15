@@ -40,6 +40,22 @@ if status is-interactive
     set -g fish_prompt_pwd_dir_length 2
     set -g EDITOR nvr
 
+    # Forgit options:
+    set -x FORGIT_FZF_DEFAULT_OPTS "
+    --ansi
+    --height='80%'
+    --bind='alt-k:preview-up,alt-p:preview-up'
+    --bind='alt-j:preview-down,alt-n:preview-down'
+    --bind='ctrl-r:toggle-all'
+    --bind='ctrl-s:toggle-sort'
+    --bind='?:toggle-preview'
+    --bind='alt-w:toggle-preview-wrap'
+    --preview-window='right:60%'
+    +1"
+    set -x FORGIT_GI_REPO_LOCAL "/Users/pjc/.cache/forgit/gi/repos/dvcs/gitignore"
+    set -x FORGIT_GI_REPO_REMOTE "https://github.com/dvcs/gitignore"
+    set -x FORGIT_GI_TEMPLATES "/Users/pjc/.cache/forgit/gi/repos/dvcs/gitignore/templates"
+
     # Set nvim listen address
     set -g NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
@@ -69,6 +85,7 @@ if status is-interactive
     abbr --add --global llag  "exa --icons --long --all --git --header --group-directories-first --sort date"
  
     # Brew/Homebrew abbreviations
+    abbr --add --global ,bi   'brew install '
     abbr --add --global ,bic  'brew install --cask '
     abbr --add --global ,bls  'brew list'
     abbr --add --global ,bs   'brew search'
@@ -91,6 +108,8 @@ if status is-interactive
 
   # Aliases
   alias j z
+  alias apt nala
+  alias python python3
 
   # ITERM2 integration
   test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
@@ -114,4 +133,7 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
+
+# Hook in direnv support
+direnv hook fish | source
 

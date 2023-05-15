@@ -1,4 +1,6 @@
-# Shows notification on your device and watch with Secure ShellFish installed.
+# Shows notification on your device with Secure ShellFish installed
+# optionally opening URL or running Shortcut when notification is
+# opened.
 #
 # This command sends encrypted data through push notifications such
 # that it doesn't need to run from a Secure ShellFish terminal.
@@ -7,7 +9,7 @@
 
 function notify
   if not set -q argv[1]
-    echo 'Usage: notify [title] <body> ...'
+    echo 'Usage: notify [--shortcut NameOfShortcut] [--url https://url.to.open/] [title] <body> ...'
   else
     set --local key a99d326cc28bca98b4a011d3826e5625d497f394529de35c461dcbca21262ace
     set --local user CX1kCX9LIWWRKqK6fqyk7p9EPtTVbia1bngeBf1D

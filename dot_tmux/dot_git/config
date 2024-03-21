@@ -6,8 +6,8 @@
 	ignorecase = true
 	precomposeunicode = true
 [remote "origin"]
-	url = https://github.com/gpakosz/.tmux.git
+	url = https://github.com/PJC-64/tmux.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
+[branch "main"]
 	remote = origin
-	merge = refs/heads/master
+	merge = refs/heads/main

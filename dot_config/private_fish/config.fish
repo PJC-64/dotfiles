@@ -33,7 +33,7 @@ fish_add_path -pg $BYOBU_PREFIX/lib/ruby/gems/3.1.0/bin
 # Interactive-Only settings
 
 if status is-interactive
-    
+
     # Enable Glyphs
     set -g theme_powerline_fonts yes
     set -g theme_nerd_fonts yes
@@ -59,9 +59,9 @@ if status is-interactive
     # Set nvim listen address
     set -g NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
-    # Chezmoi abbreviations
+    # NOTE: Chezmoi abbreviations
     abbr --add --global cm   "chezmoi"
-    abbr --add --global cma  "chezmoi add"              # Add an existing file, directory, or symlink to the source state 
+    abbr --add --global cma  "chezmoi add"              # Add an existing file, directory, or symlink to the source state
     abbr --add --global cmad "chezmoi add"              # Add an existing file, directory, or symlink to the source state (Alt abbr)
     abbr --add --global cmap "chezmoi apply --verbose"  # Update the destination directory to match the target state
     abbr --add --global cmar "chezmoi archive"          # Generate a tar archive of the target state
@@ -71,19 +71,19 @@ if status is-interactive
     abbr --add --global cmm  "chezmoi merge"            # Perform a 3-way merge
     abbr --add --global cmma "chezmoi merge-all"        # Perform a 3-way merge for each modified file
     abbr --add --global cmrm "chezmoi remove"           # Remove a target from both the source state and the destination directory
-    abbr --add --global cmst "chezmoi status"           # Show the satus of targets
+    abbr --add --global cmst "chezmoi status"           # Show the status of targets
     abbr --add --global cmug "chezmoi upgrade"          # Upgrade chezmoi to the latest released version
     abbr --add --global cmup "chezmoi update"           # Pull any changes from remote git and apply them
-    
+
     # EXA abbreviations
-    abbr --add --global ls    "exa --icons"
-    abbr --add --global la    "exa  --icons --all"
-    abbr --add --global lag   "exa --icons --all --git"
-    abbr --add --global ll    "exa --icons --long --header"
-    abbr --add --global llg   "exa --icons --long --git --header --group-directories-first --sort date"
-    abbr --add --global lla   "exa --icons --long --all --header --group-directories-first --sort date"
-    abbr --add --global llag  "exa --icons --long --all --git --header --group-directories-first --sort date"
- 
+    abbr --add --global ls    "eza --icons"
+    abbr --add --global la    "eza  --icons --all"
+    abbr --add --global lag   "eza --icons --all --git"
+    abbr --add --global ll    "eza --icons --long --header"
+    abbr --add --global llg   "eza --icons --long --git --header --group-directories-first --sort date"
+    abbr --add --global lla   "eza --icons --long --all --header --group-directories-first --sort date"
+    abbr --add --global llag  "eza --icons --long --all --git --header --group-directories-first --sort date"
+
     # Brew/Homebrew abbreviations
     abbr --add --global ,bi   'brew install '
     abbr --add --global ,bic  'brew install --cask '
@@ -125,11 +125,11 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 
 # Which modules would you like to load? (modules can be found in ~/.tackle/modules/*)
 # Custom modules may be added to ~/.tacklebox/modules/
-# Example format: set tacklebox_modules virtualfish virtualhooks
+# example format: set tacklebox_modules virtualfish virtualhooks
 
 # Which plugins would you like to enable? (plugins can be found in ~/.tackle/plugins/*)
 # Custom plugins may be added to ~/.tacklebox/plugins/
-# Example format: set tacklebox_plugins python extract
+# example format: set tacklebox_plugins python extract
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
@@ -137,3 +137,6 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Hook in direnv support
 direnv hook fish | source
 
+# Hishtory Config:
+fish_add_path -pg /Users/pjc/.hishtory"
+source /Users/pjc/.hishtory/config.fish

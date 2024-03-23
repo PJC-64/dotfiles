@@ -70,13 +70,17 @@ z4h source ~/.env.zsh
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # This is just an example that you should delete. It does nothing useful.
-z4h source  ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
+# z4h source  ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 z4h source  ~/.zsh/catpuccin_mocha_zsh-syntax-highlighting.zsh
-#z4h load    ohmyzsh/ohmyzsh/plugins/zsh-syntax-highlighting
+# z4h load    ohmyzsh/ohmyzsh/plugins/zsh-syntax-highlighting
 z4h load    ohmyzsh/ohmyzsh/plugins/git
 z4h load    ohmyzsh/ohmyzsh/plugins/git-auto-fetch
 z4h load    ohmyzsh/ohmyzsh/plugins/aliases
 z4h load    ohmyzsh/ohmyzsh/plugins/extract
+z4h load    ohmyzsh/ohmyzsh/plugins/zsh-autosuggestions
+z4h load    ohmyzsh/ohmyzsh/plugins/jsontools
+z4h load    ohmyzsh/ohmyzsh/plugins/sudo
+z4h load    ohmyzsh/ohmyzsh/plugins/macos
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change

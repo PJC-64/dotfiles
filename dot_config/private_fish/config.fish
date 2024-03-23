@@ -138,5 +138,5 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 direnv hook fish | source
 
 # Hishtory Config:
-fish_add_path -pg /Users/pjc/.hishtory"
+fish_add_path -pg "/Users/pjc/.hishtory"
 source /Users/pjc/.hishtory/config.fish

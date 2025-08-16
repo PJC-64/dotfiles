@@ -1,0 +1,32 @@
+# Define the paths to the two folders
+$folderA = "/Users/pjc/.config/wezterm/mappings"
+$folderB = "/Users/pjc/.config/wezterm"
+
+# Define the regular expression
+$regex = ".*\.lua" # Example: Matches all .txt files.  Change as needed!
+
+try {
+    # Get all files in folder A that match the regex, recursively
+    $filesA = Get-ChildItem -Path $folderA -File -Recurse -ErrorAction Stop | Where-Object {$_.Name -match $regex}
+
+    # Get all files in folder B, recursively
+    $filesB = Get-ChildItem -Path $folderB -File -Recurse -ErrorAction Stop
+
+    # Create a hashtable for faster lookups in folder B
+    $filesBHash = @{}
+    $filesB | ForEach-Object { $filesBHash[$_.Name] = $true }
+
+    # Compare and filter for files in A (matching regex) that are NOT in B
+    $missingFiles = $filesA | Where-Object { -not $filesBHash.ContainsKey($_.Name) }
+
+    # Output the missing files
+    if ($missingFiles) {
+        Write-Host "Files in '$folderA' (matching '$regex') but not in '$folderB':"
+        $missingFiles | Format-List FullPath # Or just .Name for the file name only.
+    } else {
+        Write-Host "No files found in '$folderA' (matching '$regex') that are missing in '$folderB'."
+    }
+
+} catch {
+    Write-Error "An error occurred: $_"
+}

@@ -1,0 +1,4 @@
+[build]
+sccache = "/Users/pjc/.cargo/bin/sccache"
+lld = "rust-lld.exe"
+clang = "/usr/bin/clang"

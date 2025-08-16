@@ -1,5 +1,0 @@
-0000000000000000000000000000000000000000 a976da289f8d8a87aa857e0dbbdbe8bfa07aa611 Paul Cutmore <paul.cutmore@icloud.com> 1709749282 +0000	commit (initial): Initial Commit - PJC Version
-a976da289f8d8a87aa857e0dbbdbe8bfa07aa611 0000000000000000000000000000000000000000 Paul Cutmore <paul.cutmore@icloud.com> 1709749419 +0000	Branch: renamed refs/heads/master to refs/heads/main
-0000000000000000000000000000000000000000 a976da289f8d8a87aa857e0dbbdbe8bfa07aa611 Paul Cutmore <paul.cutmore@icloud.com> 1709749419 +0000	Branch: renamed refs/heads/master to refs/heads/main
-a976da289f8d8a87aa857e0dbbdbe8bfa07aa611 dbc030034e619747684760772d92be2b785a8a66 Paul Cutmore <paul.cutmore@icloud.com> 1709883195 +0000	commit: docs: Update README.md to reflect my changes from posquito0
-dbc030034e619747684760772d92be2b785a8a66 dbc030034e619747684760772d92be2b785a8a66 Paul Cutmore <paul.cutmore@icloud.com> 1710717921 +0000	reset: moving to HEAD

@@ -1,0 +1,16 @@
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"App","operation":"open"}
+{"signed_in":false,"milliseconds_since_first_event":27,"type":"Setting","setting":"theme","value":"One Dark"}
+{"signed_in":false,"milliseconds_since_first_event":27,"type":"Setting","setting":"keymap","value":"VSCode"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"catppuccin","version":"0.2.8"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"git-firefly","version":"0.0.3"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"html","version":"0.1.1"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"lua","version":"0.0.2"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"nord","version":"0.0.4"}
+{"signed_in":false,"milliseconds_since_first_event":598,"type":"Editor","operation":"open","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":599,"type":"Editor","operation":"open","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":true,"milliseconds_since_first_event":1631,"type":"Extension","extension_id":"catppuccin","version":"0.2.10"}
+{"signed_in":true,"milliseconds_since_first_event":2497,"type":"Extension","extension_id":"html","version":"0.1.2"}
+{"signed_in":true,"milliseconds_since_first_event":3425,"type":"Extension","extension_id":"lua","version":"0.0.3"}
+{"signed_in":true,"milliseconds_since_first_event":4183,"type":"Extension","extension_id":"nord","version":"0.0.7"}
+{"signed_in":true,"milliseconds_since_first_event":239969,"type":"Memory","memory_in_bytes":9748480,"virtual_memory_in_bytes":449825259520}
+{"signed_in":true,"milliseconds_since_first_event":239969,"type":"Cpu","usage_as_percentage":0.0,"core_count":8}

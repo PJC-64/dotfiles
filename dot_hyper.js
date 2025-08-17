@@ -9,10 +9,11 @@ module.exports = {
     updateChannel: "canary",
 
     // default font size in pixels for all tabs
-    fontSize: 16,
+    fontSize: 20,
 
     // font family with optional fallbacks
-    fontFamily: '"Iosevka Nerd Font", "RobotoMono Nerd Font", "ProFontX", "Fira Code", "Hack Nerd Font"',
+    fontFamily: '"Iosevka Nerd Font", "Fira Code Nerd Font", "Hack Nerd Font"',
+    font: '"Iosevka Nerd Font", "Fira Code Nerd Font", "Hack Nerd Font"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
@@ -90,6 +91,11 @@ module.exports = {
       lightCyan: "#68FDFE",
       lightWhite: "#FFFFFF",
     },
+    
+    config : {
+      catppuccinTheme: ‘Mocha’,L
+    },
+
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -219,6 +225,6 @@ module.exports = {
     "perfect-hyper",
     "hyper-launch-menu",
     "hyper-font-ligatures",
-    "hyper-dracula",
+    "hypurr#latest",
   ],
 };

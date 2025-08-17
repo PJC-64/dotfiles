@@ -1,6 +1,7 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
-# Personal Zsh configuration file. It is strongly recommended to keep all
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# Amazon Q pre block. Keep at the top of this file.
+## Personal Zsh configuration file. It is strongly recommended to keep all
 # shell customization and configuration (including exported environment
 # variables such as PATH) in this file or in files sourced from it.
 #
@@ -34,7 +35,9 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
-zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+zstyle ':z4h:ssh:pjc-nas01.local' enable 'no'
+zstyle ':z4h:ssh:openvms.local' enable 'no'
+zstyle ':z4h:ssh:apollo.local' enable 'no'
 # The default value if none of the overrides above match the hostname.
 zstyle ':z4h:ssh:*'                   enable 'yes'
 
@@ -53,6 +56,7 @@ z4h install ohmyzsh/ohmyzsh || return
 # initialize Zsh. After this point console I/O is unavailable until Zsh
 # is fully initialized. Everything that requires user interaction or can
 # perform network I/O must be done above. Everything else is best done below.
+#
 z4h init || return
 
 # Extend PATH.
@@ -61,26 +65,30 @@ export PATH=${HOME}/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # Export environment variables.
 export GPG_TTY=$TTY
 export T_REPOS_DIR=${HOME}/Development
-export EDITOR=nvim
+export EDITOR=lnv
 export NOTES_DIR=/Users/pjc/Projects/notes
+export CONFIG_DIR=/Users/pjc/.config
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
 
 # Use additional Git repositories pulled in with `z4h install`.
 #
-# This is just an example that you should delete. It does nothing useful.
+# NOTE: The next entry is just an example that I've commented out - it does nothing useful.
 # z4h source  ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-z4h source  ~/.zsh/catpuccin_mocha_zsh-syntax-highlighting.zsh
+# z4h source  ~/.zsh/catpuccin_mocha_zsh-syntax-highlighting.zsh # Catppuccin color theme(mocha) for syntax
 # z4h load    ohmyzsh/ohmyzsh/plugins/zsh-syntax-highlighting
+z4h load    ohmyzsh/ohmyzsh/plugins/aliases
+z4h load    ohmyzsh/ohmyzsh/plugins/alias-finder
+z4h load    ohmyzsh/ohmyzsh/plugins/extract
+z4h load    ohmyzsh/ohmyzsh/plugins/eza-zsh
 z4h load    ohmyzsh/ohmyzsh/plugins/git
 z4h load    ohmyzsh/ohmyzsh/plugins/git-auto-fetch
-z4h load    ohmyzsh/ohmyzsh/plugins/aliases
-z4h load    ohmyzsh/ohmyzsh/plugins/extract
-z4h load    ohmyzsh/ohmyzsh/plugins/zsh-autosuggestions
 z4h load    ohmyzsh/ohmyzsh/plugins/jsontools
-z4h load    ohmyzsh/ohmyzsh/plugins/sudo
 z4h load    ohmyzsh/ohmyzsh/plugins/macos
+z4h load    ohmyzsh/ohmyzsh/plugins/sudo
+# z4h load    ohmyzsh/ohmyzsh/plugins/zsh-autosuggestions
+z4h load    ohmyzsh/ohmyzsh/plugins/zsh-you-should-use
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
@@ -103,50 +111,49 @@ compdef _directories md
 
 # Configure zoxide
 eval "$(zoxide init zsh)"
-#
+
+# Configure atuin
+eval "$(atuin init zsh)"
+
 # Define aliases of standard commands (specific switches mostly).
-alias tree='tree -a -I .git'
+alias cat=bat
 alias cls=clear
-alias ls=eza
-alias exa=eza
 alias cm="chezmoi"
-alias cma="chezmoi add"              # Add an existing file, directory, or symlink to the source state
+alias cma="chezmoi add"               # Add an existing file, directory, or symlink to the source state
 alias cmad="chezmoi add"              # Add an existing file, directory, or symlink to the source state (Alt abbr)
 alias cmap="chezmoi apply --verbose"  # Update the destination directory to match the target state
 alias cmar="chezmoi archive"          # Generate a tar archive of the target state
 alias cmcd="chezmoi cd"               # Launch a new shell in the source directory
-alias cmd="chezmoi diff"             # Print the diff between the target state and the destination state
-alias cmf="chezmoi forget"           # Remove a target from the source state
-alias cmm="chezmoi merge"            # Perform a 3-way merge
+alias cmd="chezmoi diff"              # Print the diff between the target state and the destination state
+alias cmf="chezmoi forget"            # Remove a target from the source state
+alias cmm="chezmoi merge"             # Perform a 3-way merge
 alias cmma="chezmoi merge-all"        # Perform a 3-way merge for each modified file
 alias cmrm="chezmoi remove"           # Remove a target from both the source state and the destination directory
 alias cmst="chezmoi status"           # Show the status of targets
 alias cmug="chezmoi upgrade"          # Upgrade chezmoi to the latest released version
 alias cmup="chezmoi update"           # Pull any changes from remote git and apply them
+alias exa=eza                         # Make sure exa actually uses eza since exa is no longer maintained.
+alias ls="eza -h --git --group-directories-first --icons --header"
+alias oa="open -a"                    # Open an application
+alias mmv="noglob zmv -W"             # Move (rename) '*.ls' '*.txt' that works 'properly (no need for quotes, uses zmv)
+alias ta="tmux attach"
+alias tls="tmux ls"
 #
 # Personal aliases - usually my scripts, or abbreviations for long commands.
-alias ,nx='nvr --servername `nvr --serverlist`'
 alias ,bc=better-commits
 alias ,bb=better-branch
-alias ,ze='nvim $HOME/.zshrc'
+alias ,nx='nvr --servername `nvr --serverlist`'
+alias ,ze='lnv $HOME/.zshrc'
 alias ,zs='exec zsh'
-
-# Add flags to existing aliases.
-alias ls="${aliases[ls]:-ls} --header --icons --git --group-directories-first"
+alias lnv="NVIM_APPNAME=lazynvim nvim"
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-# Hishtory Config:
-export PATH="$PATH:${HOME}/.hishtory"
-source ${HOME}/.hishtory/config.zsh
-
+#eval “$(mise activate zsh)”
 
 . "$HOME/.cargo/env"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -154,5 +161,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# Source the Lazyman shell initialization for aliases and nvims selector
+# shellcheck source=.config/nvim-Lazyman/.lazymanrc
+[ -f ~/.config/nvim-Lazyman/.lazymanrc ] && source ~/.config/nvim-Lazyman/.lazymanrc
+# Source the Lazyman .nvimsbind for nvims key binding
+# shellcheck source=.config/nvim-Lazyman/.nvimsbind
+[ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Amazon Q post block. Keep at the bottom of this file.
+#
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# Added by Windsurf
+export PATH="/Users/pjc/.codeium/windsurf/bin:$PATH"

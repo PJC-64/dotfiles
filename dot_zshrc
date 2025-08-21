@@ -1,11 +1,21 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-# Amazon Q pre block. Keep at the top of this file.
-## Personal Zsh configuration file. It is strongly recommended to keep all
+################################################################################
+#
+# @Creator: Roman Perepelitsa (romkatv)
+# @Created: 2020
+# @GitHub: https://github.com/romkatv/zsh4humans/tree/master
+# @Modified-by: Paul Cutmore (PJC-64)
+# @Modified-date: 2025-08-21
+# @Description: Personal Zsh configuration file. It is strongly recommended to keep all
 # shell customization and configuration (including exported environment
 # variables such as PATH) in this file or in files sourced from it.
 #
+################################################################################
 # Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
+################################################################################
+#
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# Amazon Q pre block. Keep at the top of this file.
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
 # You can manually run `z4h update` to update everything.
 zstyle ':z4h:' auto-update      'ask'
@@ -35,9 +45,12 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
+# (PJC) I'm turning this off ('no') for embedded systems, Windows, and OpenVMS devices.
 zstyle ':z4h:ssh:pjc-nas01.local' enable 'no'
 zstyle ':z4h:ssh:openvms.local' enable 'no'
 zstyle ':z4h:ssh:apollo.local' enable 'no'
+zstyle ':z4h:ssh:firewalla.local' enable 'no'
+zstyle ':z4h:ssh:192.168.2.1' enable 'no'
 # The default value if none of the overrides above match the hostname.
 zstyle ':z4h:ssh:*'                   enable 'yes'
 
@@ -65,9 +78,10 @@ export PATH=${HOME}/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # Export environment variables.
 export GPG_TTY=$TTY
 export T_REPOS_DIR=${HOME}/Development
-export EDITOR=lnv
 export NOTES_DIR=/Users/pjc/Projects/notes
 export CONFIG_DIR=/Users/pjc/.config
+export EDITOR=nvim
+export NVIM_APPNAME=lazynvim 
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
@@ -76,8 +90,8 @@ z4h source ~/.env.zsh
 #
 # NOTE: The next entry is just an example that I've commented out - it does nothing useful.
 # z4h source  ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-# z4h source  ~/.zsh/catpuccin_mocha_zsh-syntax-highlighting.zsh # Catppuccin color theme(mocha) for syntax
-# z4h load    ohmyzsh/ohmyzsh/plugins/zsh-syntax-highlighting
+z4h source  ~/.zsh/catpuccin_mocha_zsh-syntax-highlighting.zsh # Catppuccin color theme(mocha) for syntax
+z4h load    ohmyzsh/ohmyzsh/plugins/zsh-syntax-highlighting
 z4h load    ohmyzsh/ohmyzsh/plugins/aliases
 z4h load    ohmyzsh/ohmyzsh/plugins/alias-finder
 z4h load    ohmyzsh/ohmyzsh/plugins/extract
@@ -125,6 +139,8 @@ alias cmap="chezmoi apply --verbose"  # Update the destination directory to matc
 alias cmar="chezmoi archive"          # Generate a tar archive of the target state
 alias cmcd="chezmoi cd"               # Launch a new shell in the source directory
 alias cmd="chezmoi diff"              # Print the diff between the target state and the destination state
+alias cme="chezmoi edit"              # Edit a file from the source directory
+alias cmea="chezmoi edit --apply"     # Edit a file from the source directory and automatically apply the change to the target
 alias cmf="chezmoi forget"            # Remove a target from the source state
 alias cmm="chezmoi merge"             # Perform a 3-way merge
 alias cmma="chezmoi merge-all"        # Perform a 3-way merge for each modified file
@@ -151,11 +167,12 @@ alias lnv="NVIM_APPNAME=lazynvim nvim"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-#eval “$(mise activate zsh)”
-
-. "$HOME/.cargo/env"
-
+# Setup the required aliases, etc, for various applications.
+eval “$(mise activate zsh)”
+eval $(thefuck --alias) 
+"$HOME/.cargo/env"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval “$(atuin init zsh)”
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

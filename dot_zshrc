@@ -123,11 +123,6 @@ compdef _directories md
 # Define named directories: ~w <=> Windows home directory on WSL.
 [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
 
-# Configure zoxide
-eval "$(zoxide init zsh)"
-
-# Configure atuin
-eval "$(atuin init zsh)"
 
 # Define aliases of standard commands (specific switches mostly).
 alias cat=bat
@@ -167,12 +162,18 @@ alias lnv="NVIM_APPNAME=lazynvim nvim"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-# Setup the required aliases, etc, for various applications.
-eval “$(mise activate zsh)”
-eval $(thefuck --alias) 
+# Execute the required setup scripts for various applications.
+eval “$(mise activate zsh)” 2>/dev/null
+eval "$(thefuck --alias)"
+eval “$(atuin init zsh)” 2>/dev/null
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
 "$HOME/.cargo/env"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval “$(atuin init zsh)”
+
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

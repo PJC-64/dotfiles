@@ -1,1 +1,1 @@
-../../Development/NeoVim/lazyynvim/install.sh
+../../Development/NeoVim/lazynvim/install.sh

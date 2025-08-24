@@ -1,5 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/pjc/.local/share/chezmoi
     - /Users/pjc/Development/dura-go
     - /Users/pjc/Development/dura
 startuppopupversion: 5

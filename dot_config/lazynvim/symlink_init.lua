@@ -1,1 +1,1 @@
-../../Development/NeoVim/lazyynvim/init.lua
+../../Development/NeoVim/lazynvim/init.lua

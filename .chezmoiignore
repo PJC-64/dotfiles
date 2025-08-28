@@ -1,2 +1,5 @@
 .config/chezmoi
 .config/chezmoi/**
+.config/raycast/extensions
+.config/raycast/extensions/**
+.config/gh/hosts.yml
